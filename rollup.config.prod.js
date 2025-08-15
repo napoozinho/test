@@ -1,0 +1,33 @@
+import { defineConfig } from 'rollup'
+import del from 'rollup-plugin-delete'
+import terser from '@rollup/plugin-terser'
+import resolve from '@rollup/plugin-node-resolve'
+import postcss from 'rollup-plugin-postcss'
+
+export default defineConfig({
+  input: 'src/main.js',
+  output: {
+    dir: 'dist',
+    format: 'es',
+    entryFileNames: '[name].js',
+    chunkFileNames: '[name]-[hash].js',
+    sourcemap: true,
+  },
+  plugins: [
+    del({ targets: 'dist/*' }),
+    resolve(),
+    terser({
+      compress: {
+        drop_console: true,
+      },
+      output: {
+        comments: false,
+      },
+    }),
+    postcss({
+      extract: 'styles.css',
+      minimize: true,
+      sourceMap: true,
+    }),
+  ],
+})
