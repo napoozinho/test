@@ -1,4 +1,4 @@
-import { S as Swiper } from './swiper-core--xlcUKY1.js';
+import { S as Swiper } from './swiper-core-BXj7971l.js';
 
 async function sliderSimpsons (selector) {
   const component = document.querySelector(selector);
@@ -38,4 +38,4 @@ async function sliderSimpsons (selector) {
 }
 
 export { sliderSimpsons as default };
-//# sourceMappingURL=slider-simpsons-BPoD3ySd.js.map
+//# sourceMappingURL=slider-simpsons-IlzpaTSi.js.map

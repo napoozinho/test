@@ -13,15 +13,15 @@ function requireMain () {
 	const components = [
 	  {
 	    selector: "[data-component='navbar']",
-	    importFn: () => import('./navbar-D2AU8i9l.js'),
+	    importFn: () => import('./navbar-BN5coUSd.js'),
 	  },
 	  {
 	    selector: "[data-component='slider']",
-	    importFn: () => import('./slider-DzorZFAr.js'),
+	    importFn: () => import('./slider-Dsuq7WU6.js'),
 	  },
 	  {
 	    selector: "[data-component='slider-simpsons']",
-	    importFn: () => import('./slider-simpsons-BPoD3ySd.js'),
+	    importFn: () => import('./slider-simpsons-IlzpaTSi.js'),
 	  },
 	  // Add more components here
 	];
@@ -45,7 +45,7 @@ function requireMain () {
 	}
 (async () => {
 	  try {
-	    const module = await import('./global-BUH6uqF2.js');
+	    const module = await import('./global-D-kc9-VV.js');
 	    if (typeof module.default === 'function') {
 	      module.default();
 	      console.log(`✅ global function loaded`);

@@ -1,4 +1,4 @@
-import { S as Swiper } from './swiper-core--xlcUKY1.js';
+import { S as Swiper } from './swiper-core-BXj7971l.js';
 
 function slider (selector) {
   const component = document.querySelector(selector);
@@ -9,4 +9,4 @@ function slider (selector) {
 }
 
 export { slider as default };
-//# sourceMappingURL=slider-DzorZFAr.js.map
+//# sourceMappingURL=slider-Dsuq7WU6.js.map

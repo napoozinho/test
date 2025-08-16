@@ -4378,4 +4378,4 @@ Object.keys(prototypes).forEach(prototypeGroup => {
 Swiper.use([Resize, Observer]);
 
 export { Swiper as S };
-//# sourceMappingURL=swiper-core--xlcUKY1.js.map
+//# sourceMappingURL=swiper-core-BXj7971l.js.map
