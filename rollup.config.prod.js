@@ -3,6 +3,7 @@ import del from 'rollup-plugin-delete'
 import terser from '@rollup/plugin-terser'
 import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
+import commonjs from '@rollup/plugin-commonjs'
 
 export default defineConfig({
   input: 'src/main.js',
@@ -29,5 +30,6 @@ export default defineConfig({
       minimize: true,
       sourceMap: true,
     }),
+    commonjs(),
   ],
 })

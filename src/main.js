@@ -8,6 +8,10 @@ const components = [
     selector: "[data-component='slider']",
     importFn: () => import('./components/slider.js'),
   },
+  {
+    selector: "[data-component='slider-simpsons']",
+    importFn: () => import('./components/slider-simpsons.js'),
+  },
   // Add more components here
 ]
 
