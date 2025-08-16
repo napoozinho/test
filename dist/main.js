@@ -1,2 +1,67 @@
-function o(o){return o&&o.__esModule&&Object.prototype.hasOwnProperty.call(o,"default")?o.default:o}var t,n={};var e=o(function(){if(t)return n;t=1;const o=[{selector:"[data-component='navbar']",importFn:()=>import("./navbar-CvwmjRnq.js")},{selector:"[data-component='slider']",importFn:()=>import("./slider-Bt4bj09w.js")},{selector:"[data-component='slider-simpsons']",importFn:()=>import("./slider-simpsons-40H8SESs.js")}];async function e({selector:o,importFn:t}){try{if(document.querySelector(o)){const n=await t(),e=t.name||"unknown";"function"==typeof n.default?(n.default(o),console.log(`✅ ${o} loaded`)):console.warn(`No valid default function found in ${e}.js`)}}catch(o){console.error(`Failed to load ${t.name||"component"}:`,o)}}return(async()=>{await Promise.all(o.map(e))})(),n}());export{e as default};
+function getDefaultExportFromCjs (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+var main$1 = {};
+
+var hasRequiredMain;
+
+function requireMain () {
+	if (hasRequiredMain) return main$1;
+	hasRequiredMain = 1;
+	// Define components with their selectors and import functions
+	const components = [
+	  {
+	    selector: "[data-component='navbar']",
+	    importFn: () => import('./navbar-D2AU8i9l.js'),
+	  },
+	  {
+	    selector: "[data-component='slider']",
+	    importFn: () => import('./slider-DzorZFAr.js'),
+	  },
+	  {
+	    selector: "[data-component='slider-simpsons']",
+	    importFn: () => import('./slider-simpsons-BPoD3ySd.js'),
+	  },
+	  // Add more components here
+	];
+
+	async function loadComponent({ selector, importFn }) {
+	  try {
+	    const component = document.querySelector(selector);
+	    if (!component) return
+	    const module = await importFn();
+	    const componentName = importFn.name || 'unknown';
+
+	    if (typeof module.default === 'function') {
+	      module.default(selector);
+	      console.log(`✅ ${selector} loaded`);
+	    } else {
+	      console.warn(`No valid default function found in ${componentName}.js`);
+	    }
+	  } catch (error) {
+	    console.error(`Failed to load ${importFn.name || 'component'}:`, error);
+	  }
+	}
+(async () => {
+	  try {
+	    const module = await import('./global-BUH6uqF2.js');
+	    if (typeof module.default === 'function') {
+	      module.default();
+	      console.log(`✅ global function loaded`);
+	    } else {
+	      console.warn(`No valid default function found in global.js`);
+	    }
+	  } catch (error) {
+	    console.error(`Failed to load global function:`, error);
+	  }
+	  await Promise.all(components.map(loadComponent));
+	})();
+	return main$1;
+}
+
+var mainExports = requireMain();
+var main = /*@__PURE__*/getDefaultExportFromCjs(mainExports);
+
+export { main as default };
 //# sourceMappingURL=main.js.map

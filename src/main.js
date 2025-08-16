@@ -17,16 +17,16 @@ const components = [
 
 async function loadComponent({ selector, importFn }) {
   try {
-    if (document.querySelector(selector)) {
-      const module = await importFn()
-      const componentName = importFn.name || 'unknown'
+    const component = document.querySelector(selector)
+    if (!component) return
+    const module = await importFn()
+    const componentName = importFn.name || 'unknown'
 
-      if (typeof module.default === 'function') {
-        module.default(selector)
-        console.log(`✅ ${selector} loaded`)
-      } else {
-        console.warn(`No valid default function found in ${componentName}.js`)
-      }
+    if (typeof module.default === 'function') {
+      module.default(selector)
+      console.log(`✅ ${selector} loaded`)
+    } else {
+      console.warn(`No valid default function found in ${componentName}.js`)
     }
   } catch (error) {
     console.error(`Failed to load ${importFn.name || 'component'}:`, error)
@@ -34,5 +34,16 @@ async function loadComponent({ selector, importFn }) {
 }
 
 ;(async () => {
+  try {
+    const module = await import('./components/global.js')
+    if (typeof module.default === 'function') {
+      module.default()
+      console.log(`✅ global function loaded`)
+    } else {
+      console.warn(`No valid default function found in global.js`)
+    }
+  } catch (error) {
+    console.error(`Failed to load global function:`, error)
+  }
   await Promise.all(components.map(loadComponent))
 })()

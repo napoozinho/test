@@ -2,10 +2,6 @@ import Swiper from 'swiper'
 import 'swiper/css'
 
 export default async function (selector) {
-  performance.mark('target-point')
-  performance.measure('start-to-target', 'start-point', 'target-point')
-  console.log(performance.getEntriesByName('start-to-target')[0].duration, 'ms')
-
   const component = document.querySelector(selector)
   if (!component) throw new Error('Container not found')
 
