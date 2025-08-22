@@ -1,5 +1,5 @@
 {
-  "name": "starter",
+  "name": "starter-js-rollup",
   "version": "1.1.0",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,21 @@
     "prebuild": "prettier . --write",
     "format": "prettier . --write"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "javascript",
+    "starter",
+    "rollup",
+    "postcss",
+    "bundle"
+  ],
+  "author": "Napu 😎",
   "license": "ISC",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/napoozinho/starter-js-rollup.git"
+  },
+  "homepage": "https://github.com/napoozinho/starter-js-rollup#readme",
+  "description": "A minimal JavaScript starter project with Rollup, PostCSS, and optimized build tooling for modern web development.",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
@@ -21,7 +32,9 @@
     "prettier": "^3.6.2",
     "rollup": "^4.46.2",
     "rollup-plugin-delete": "^3.0.1",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-visualizer": "^6.0.3"
+    "rollup-plugin-postcss": "^4.0.2"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
   }
 }

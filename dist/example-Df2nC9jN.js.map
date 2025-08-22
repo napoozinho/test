@@ -1,0 +1,1 @@
+{"version":3,"file":"example-Df2nC9jN.js","sources":["../src/components/example.js"],"sourcesContent":["export default function (selector) {\n  console.log(selector)\n}\n"],"names":["example","selector"],"mappings":"AAAe,SAAAA,EAAUC,GAEzB"}

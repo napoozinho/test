@@ -4,7 +4,6 @@ import terser from '@rollup/plugin-terser'
 import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   input: 'src/main.js',
@@ -31,9 +30,6 @@ export default defineConfig({
       output: {
         comments: false,
       },
-    }),
-    visualizer({
-      filename: './dist/stats.html',
     }),
   ],
 })
