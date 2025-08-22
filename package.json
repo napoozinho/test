@@ -21,10 +21,7 @@
     "prettier": "^3.6.2",
     "rollup": "^4.46.2",
     "rollup-plugin-delete": "^3.0.1",
-    "rollup-plugin-postcss": "^4.0.2"
-  },
-  "dependencies": {
-    "gsap": "^3.13.0",
-    "swiper": "^11.2.10"
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-visualizer": "^6.0.3"
   }
 }

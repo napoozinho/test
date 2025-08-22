@@ -3,6 +3,7 @@ import del from 'rollup-plugin-delete'
 import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   input: 'src/main.js',
@@ -16,11 +17,14 @@ export default defineConfig({
   plugins: [
     del({ targets: 'dist/*' }),
     resolve(),
+    commonjs(),
     postcss({
       extract: 'styles.css',
       minimize: true,
       sourceMap: true,
     }),
-    commonjs(),
+    visualizer({
+      filename: './dist/stats.html',
+    }),
   ],
 })

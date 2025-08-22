@@ -4,6 +4,7 @@ import terser from '@rollup/plugin-terser'
 import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   input: 'src/main.js',
@@ -17,19 +18,22 @@ export default defineConfig({
   plugins: [
     del({ targets: 'dist/*' }),
     resolve(),
-    terser({
-      compress: {
-        drop_console: false,
-      },
-      output: {
-        comments: false,
-      },
-    }),
+    commonjs(),
     postcss({
       extract: 'styles.css',
       minimize: true,
       sourceMap: true,
     }),
-    commonjs(),
+    terser({
+      compress: {
+        drop_console: true,
+      },
+      output: {
+        comments: false,
+      },
+    }),
+    visualizer({
+      filename: './dist/stats.html',
+    }),
   ],
 })
