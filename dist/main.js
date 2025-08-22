@@ -45,7 +45,7 @@ function requireMain () {
 	}
 (async () => {
 	  try {
-	    const module = await import('./global-D-kc9-VV.js');
+	    const module = await import('./global-BvmTRmvX.js');
 	    if (typeof module.default === 'function') {
 	      module.default();
 	      console.log(`✅ global function loaded`);
